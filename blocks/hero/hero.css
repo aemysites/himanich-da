@@ -358,7 +358,6 @@
   display: block;
 }
 
-/* Collage grid background */
 .hero.hero20 > div:first-child {
   position: absolute;
   inset: 0;
@@ -393,7 +392,6 @@
   box-sizing: border-box;
 }
 
-/* Foreground content: perfectly center with visual gap between elements */
 .hero.hero20 > div:last-child {
   position: relative;
   z-index: 2;
@@ -413,10 +411,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.1vw; /* Modern spacing between headline, subtitle, and buttons */
+  gap: 2.1vw;
 }
 
-/* Headline: large, bold, with loose spacing below */
 .hero.hero20 h1 {
   color: #fff;
   font-size: clamp(2.6rem, 8vw, 6.5rem);
@@ -431,7 +428,6 @@
   overflow-wrap: break-word;
 }
 
-/* Subtitle: lighter, more transparent background and tighter width */
 .hero.hero20 > div:last-child p:not(:last-child) {
   color: #fff;
   font-size: 1.1rem;
@@ -447,7 +443,6 @@
   box-sizing: border-box;
 }
 
-/* Buttons: adjust size, padding, and gap for clarity */
 .hero.hero20 > div:last-child p:last-child {
   display: flex;
   flex-direction: row;
@@ -478,7 +473,6 @@
   color: #232323;
 }
 
-/* Responsive collage stacking and text scaling */
 @media (width <= 900px) {
   .hero.hero20 > div:first-child {
     grid-template-columns: 1fr;
@@ -513,4 +507,98 @@
   }
 }
 
-/* Ensure hero spans edge-to-edge */
+
+.hero.hero28 {
+  position: relative;
+  min-height: 640px;
+  width: 100vw;
+  overflow: hidden;
+  display: block;
+  padding: 0;
+}
+
+.hero.hero28 > div:first-child {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero.hero28 picture,
+.hero.hero28 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.hero.hero28::after {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 32%);
+  z-index: 2;
+}
+
+/* Improved vertical placement using flex and margin */
+.hero.hero28 > div:last-child {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero.hero28 > div:last-child > div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Push headline further down using margin-top */
+.hero.hero28 h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 5.2rem);
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.08;
+  letter-spacing: 0.06em;
+  text-shadow: 0 2px 16px rgb(0 0 0 / 28%);
+  width: 90vw;
+  max-width: 1500px;
+  margin: 14vh 0 0;
+  padding: 0;
+  pointer-events: auto;
+}
+
+@media (width <= 900px) {
+  .hero.hero28 {
+    min-height: 400px;
+  }
+
+  .hero.hero28 h1 {
+    font-size: clamp(2rem, 8vw, 3.2rem);
+    width: 96vw;
+    margin-top: 7vh;
+  }
+}
+
+@media (width <= 600px) {
+  .hero.hero28 {
+    min-height: 240px;
+  }
+
+  .hero.hero28 h1 {
+    font-size: clamp(1.4rem, 8vw, 2rem);
+    width: 98vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+    margin-top: 4vh;
+  }
+}
