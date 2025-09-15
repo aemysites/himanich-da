@@ -1,5 +1,13 @@
 {
   "project": "AEM XWalk Boilerplate",
   "editUrlLabel": "AEM Editor",
-  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
+  "plugins": [
+    {
+      "id": "content-generator",
+      "title": "Content Generator",
+      "url": "/tools/content-generator/content-generator.html",
+      "icon": "https://img.icons8.com/?size=512&id=11638&format=png" // placeholder icon
+    }
+  ]
 }
