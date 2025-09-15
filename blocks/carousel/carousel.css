@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .carousel .carousel-slides-container {
   position: relative;
 }
@@ -99,7 +100,6 @@
   z-index: 1;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .carousel .carousel-navigation-buttons button {
   position: relative;
   width: 44px;
@@ -150,4 +150,171 @@
   .carousel .carousel-slide .carousel-slide-content[data-align='justify'] {
     --slide-content-width: auto;
   }
+}
+
+
+.carousel.carousel21 {
+  position: relative;
+  overflow: visible;
+  background: none;
+}
+
+/* Main image: slightly skewed and boxed with a strong outline */
+.carousel.carousel21 .carousel-slide .carousel-slide-image {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  transform: rotate(-7deg) scale(1.01);
+  border-radius: 18px 28px 16px 26px;
+  box-shadow: 0 14px 50px rgb(0 0 0 / 17%);
+  border: 3px solid #191919;
+  overflow: hidden;
+}
+
+/* First "paper": more offset, a bit smaller */
+.carousel.carousel21 .carousel-slide .carousel-slide-image::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: -46px -38px -30px -58px;
+  background: #fff;
+  border: 3px solid #222;
+  border-radius: 25px 21px 33px 15px;
+  z-index: -1;
+  transform: rotate(14deg) scale(1.03);
+  pointer-events: none;
+  box-shadow: 0 9px 34px rgb(0 0 0 / 14%);
+}
+
+/* Second "paper": larger, more dramatic offset and a soft tint */
+.carousel.carousel21 .carousel-slide .carousel-slide-image::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: -80px -68px -54px -76px;
+  background: #f4f6ed;
+  border: 3px solid #222;
+  border-radius: 36px 19px 25px 40px;
+  z-index: -2;
+  transform: rotate(-16deg) scale(1.17);
+  pointer-events: none;
+  box-shadow: 0 18px 46px rgb(0 0 0 / 10%);
+}
+
+/* Third "paper": smaller, even more offset, adds edge complexity */
+.carousel.carousel21 .carousel-slide .carousel-slide-image span {
+  /* Use an extra span in the image container for an additional collage layer */
+  position: absolute;
+  inset: -20px -12px -15px 44px;
+  background: #fafafa;
+  border: 2px dashed #191919;
+  border-radius: 16px 34px 18px 28px;
+  z-index: -3;
+  transform: rotate(-28deg) scale(0.92);
+  pointer-events: none;
+  box-shadow: 0 7px 20px rgb(0 0 0 / 7%);
+}
+
+/* Accent lines: more irregular, one crosses image, one crosses caption, one background */
+.carousel.carousel21 .carousel-slide::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 10vw;
+  left: 14vw;
+  width: 32vw;
+  height: 0;
+  border-top: 2.7px solid #222;
+  z-index: 9;
+  transform: rotate(-19deg);
+  opacity: 0.78;
+  pointer-events: none;
+}
+
+.carousel.carousel21 .carousel-slide::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 3vw;
+  right: 3vw;
+  width: 26vw;
+  height: 0;
+  border-top: 1.8px solid #222;
+  z-index: 8;
+  transform: rotate(13deg);
+  opacity: 0.46;
+  pointer-events: none;
+}
+
+/* Extra intersect accent for organic collage feel */
+.carousel.carousel21 .carousel-slide .carousel-slide-content::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -14px;
+  top: 24%;
+  width: 120%;
+  height: 0;
+  border-top: 2px solid #222;
+  z-index: 1;
+  transform: rotate(-9deg);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Caption styling: bolder border, shape and rotation with more overlap */
+.carousel.carousel21 .carousel-slide .carousel-slide-content {
+  position: absolute;
+  inset: auto auto 8vw 13vw;
+  width: auto;
+  min-width: 210px;
+  max-width: 62vw;
+  background: rgb(35 35 35 / 52%);
+  box-shadow: 0 7px 26px rgb(0 0 0 / 20%);
+  border-radius: 17px 9px 19px 13px;
+  transform: rotate(-10deg);
+  z-index: 10;
+  padding: 1.3em 2em;
+  margin: 0;
+  font-size: 1.27rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.018em;
+  line-height: 1.32;
+  border: 2.7px solid #222;
+  margin-top: -2vw;
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+/* Responsive adjustments for collage and caption */
+@media (width <= 900px) {
+  .carousel.carousel21 .carousel-slide .carousel-slide-content {
+    min-width: 130px;
+    max-width: 86vw;
+    font-size: 0.94rem;
+    padding: 0.7em 1em;
+    left: 5vw;
+    bottom: 4vw;
+    margin-top: -5vw;
+  }
+
+  .carousel.carousel21 .carousel-slide .carousel-slide-image {
+    border-radius: 8px 16px 6px 13px;
+  }
+
+  .carousel.carousel21 .carousel-slide .carousel-slide-image::before,
+  .carousel.carousel21 .carousel-slide .carousel-slide-image::after,
+  .carousel.carousel21 .carousel-slide .carousel-slide-image span {
+    border-radius: 12px 8px 16px 7px;
+  }
+}
+
+/* Hide navigation & indicators as before */
+.carousel.carousel21 .carousel-navigation-buttons {
+  display: none;
+}
+
+.carousel.carousel21 .carousel-slide-indicators {
+  display: none;
 }
