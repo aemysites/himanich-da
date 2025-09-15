@@ -1,3 +1,4 @@
+/* stylelint-disable no-descending-specificity */
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -55,4 +56,200 @@
 
 .tabs .tabs-panel[aria-hidden='true'] {
   display: none;
+}
+
+
+.tabs.tabs22 {
+  background: #000;
+  color: #fff;
+  padding-top: 56px;
+  padding-bottom: 56px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Center tabs-list and tabs-panel, contain width */
+.tabs.tabs22 > .tabs-list,
+.tabs.tabs22 > .tabs-panel {
+  width: 100%;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tabs row: horizontal, center, even gaps */
+.tabs.tabs22 > .tabs-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 42px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  min-height: 48px;
+}
+
+/* Individual tab: reset appearance, underline only visible on p */
+.tabs.tabs22 .tabs-list .tabs-tab {
+  background: none;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  min-height: 0;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.2s;
+  box-shadow: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tab text: underline only the text, not the button */
+.tabs.tabs22 .tabs-list .tabs-tab p {
+  text-transform: uppercase;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 5px;
+  background: transparent;
+  border: none;
+  line-height: 1.1;
+  border-bottom: 2.5px solid transparent;
+  transition: color 0.2s, border-bottom-color 0.2s;
+}
+
+.tabs.tabs22 .tabs-list .tabs-tab[aria-selected="true"] p {
+  color: #fff;
+  border-bottom: 2.5px solid #fff;
+}
+
+.tabs.tabs22 .tabs-list .tabs-tab[aria-selected="false"] p {
+  color: #888;
+  border-bottom: 1.5px solid #444;
+}
+
+/* Responsive adjustments for mobile */
+@media (width <= 700px) {
+  .tabs.tabs22 > .tabs-list {
+    gap: 19px;
+  }
+
+  .tabs.tabs22 .tabs-list .tabs-tab p {
+    font-size: 1.09rem;
+    letter-spacing: 0.09em;
+    padding-bottom: 4px;
+  }
+}
+
+/* Headline spacing, font, center alignment */
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] h3 {
+  color: #fff;
+  font-size: 3.1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 54px;
+  margin-bottom: 52px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  line-height: 1.08;
+  max-width: 1000px;
+}
+
+@media (width >= 700px) {
+  .tabs.tabs22 .tabs-panel[aria-hidden="false"] h3 {
+    font-size: 3.5rem;
+    margin-top: 64px;
+    margin-bottom: 56px;
+  }
+}
+
+@media (width >= 900px) {
+  .tabs.tabs22 .tabs-panel[aria-hidden="false"] h3 {
+    font-size: 4.1rem;
+    margin-top: 66px;
+    margin-bottom: 58px;
+  }
+}
+
+/* Panels: show only active, stack and center content */
+.tabs.tabs22 .tabs-panel {
+  display: none;
+  border: none;
+  margin-top: 0;
+  padding: 0;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+/* Inner panel content: stacked, centered, side padding for wide screens */
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] > div {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+/* Image styling: large, inset, rounded corners */
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] picture {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] img {
+  display: block;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  background: transparent;
+  margin: 0 auto;
+  box-sizing: border-box;
+  box-shadow: none;
+}
+
+/* Remove excess margin/padding from panel children */
+.tabs.tabs22 .tabs-panel[aria-hidden="false"] > div > p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hide borders, backgrounds from previously styled elements */
+.tabs.tabs22 .tabs-list button,
+.tabs.tabs22 .tabs-list .tabs-tab,
+.tabs.tabs22 .tabs-list .tabs-tab[aria-selected="true"],
+.tabs.tabs22 .tabs-panel {
+  border: none;
+  background: transparent;
+  box-shadow: none;
 }
