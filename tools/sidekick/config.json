@@ -1,5 +1,16 @@
 {
   "project": "AEM XWalk Boilerplate",
   "editUrlLabel": "AEM Editor",
-  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open"
+  "editUrlPattern": "{{contentSourceUrl}}{{pathname}}?cmd=open",
+  "plugins": [
+    {
+      "id": "give-prompt",
+      "title": "Give prompt",
+      "url": "/tools/plugins/give-prompt/give-prompt.html",
+      "isPalette": true,
+      "paletteRect": "top:25%;left:25%;height:40vh;width:40vw;",
+      "environments": ["dev", "preview", "live", "prod"],
+      "pinned": true
+    }
+  ]
 }
