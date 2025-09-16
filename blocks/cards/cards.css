@@ -36,7 +36,6 @@
   border-radius: 0.5rem;
 }
 
-/* Grid: left and right columns, left wider, tighter gap */
 .cards.cards2 > ul {
   display: grid;
   grid-template-columns: 1.23fr 0.77fr;
@@ -51,7 +50,6 @@
   row-gap: 0;
 }
 
-/* Left column: stack cards, group tightly */
 .cards.cards2 > ul > li:nth-child(1),
 .cards.cards2 > ul > li:nth-child(2) {
   grid-column: 1;
@@ -79,9 +77,6 @@
   padding: 0;
 }
 
-/* Remove row gap between left column cards */
-
-/* Hero image large and rounded */
 .cards.cards2 > ul > li:nth-child(1) .cards-card-image {
   width: 100%;
   margin-bottom: 1.2rem;
@@ -133,7 +128,6 @@
   font-weight: 400;
 }
 
-/* Second card: small image left, text right, visually wider */
 .cards.cards2 > ul > li:nth-child(2) .cards-card-image {
   width: 115px;
   min-width: 115px;
@@ -189,7 +183,6 @@
   font-weight: 400;
 }
 
-/* --- Right column (stacked text cards, divider) --- */
 .cards.cards2 > ul > li:nth-child(n+3) {
   grid-column: 2;
   display: flex;
@@ -239,7 +232,6 @@
   display: none;
 }
 
-/* Remove all box borders/backgrounds from cards */
 .cards.cards2 > ul > li {
   background: none;
   border: none;
@@ -249,13 +241,10 @@
   min-height: unset;
 }
 
-/* Right column, align first card to headline */
-
 .cards.cards2 > ul > li:nth-child(3) {
   margin-top: 1.15rem;
 }
 
-/* Responsive: stack all li vertically on smaller screens */
 @media (width <= 900px) {
   .cards.cards2 {
     padding: 1rem 0.2rem;
@@ -289,10 +278,121 @@
   }
 }
 
-/* Set max-width and center on very small screens */
 @media (width <= 600px) {
   .cards.cards2 {
     padding: 0.7rem 0.1rem;
     max-width: 99vw;
   }
+}
+
+
+.cards.cards10 {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.cards.cards10 > ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  align-items: stretch;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (width <= 900px) {
+  .cards.cards10 > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width <= 600px) {
+  .cards.cards10 > ul {
+    grid-template-columns: 1fr;
+  }
+}
+
+.cards.cards10 > ul > li {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 3px 18px 0 rgb(34 34 34 / 7%);
+  border: none;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 382px;
+  height: 100%;
+  transition: box-shadow 0.2s;
+}
+
+.cards.cards10 > ul > li:hover {
+  box-shadow: 0 8px 32px 0 rgb(34 34 34 / 13%);
+}
+
+.cards.cards10 .cards-card-image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  min-height: 178px;
+  overflow: hidden;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  background: #eaeaea;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards.cards10 .cards-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.cards.cards10 .cards-card-body {
+  padding: 20px 19px 22px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  margin: 0;
+}
+
+.cards.cards10 .cards-card-body p:first-child {
+  align-self: flex-start;
+  display: inline-block;
+  background: #f4f4f4;
+  color: #444;
+  text-transform: uppercase;
+  font-size: 8.5px;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  padding: 3px 9px;
+  border-radius: 9px;
+  margin-bottom: 11px;
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+.cards.cards10 .cards-card-body h3 {
+  color: #2A2A2A;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+.cards.cards10 .cards-card-body p:not(:first-child) {
+  color: #222;
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  margin: 0;
+  text-align: left;
 }
